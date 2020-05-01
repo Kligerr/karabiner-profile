@@ -2,7 +2,7 @@
   "title": "SecureCRT Command > CTRL modifiers",
   "rules": [
     {
-      "description": "Change Command+C,P,Q,A,Z,R to Control+C,P,Q,A,Z,R in SecureCRT",
+      "description": "Change Command+C,X,P,Q,A,Z,R to Control+C,X,P,Q,A,Z,R in SecureCRT",
       "manipulators": [
         {
           "conditions": [
@@ -28,6 +28,36 @@
           "to": [
             {
               "key_code": "c",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.vandyke\\.SecureCRT$"
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "x",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "x",
               "modifiers": [
                 "left_control"
               ]
